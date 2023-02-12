@@ -1,0 +1,4 @@
+2023 2 12
+
+try: mapping a list of items into a sequence of <li> components. DONE
+

@@ -20,9 +20,11 @@ const user = {
 };
 
 const products = [
-  {title: 'product1'},
-  {title: 'product2'}
+  {title: 'product1' , local: true},
+  {title: 'product2', local: false}
 ]
+
+
 
 function Profile() {
   return (
@@ -53,11 +55,7 @@ function App() {
           Edit <code>the src/App.js</code> and save to reload.
         </p>
 
-        < MyButton />
 
-        < Gallery />
-
-        < Profile />
 
         
         <a
@@ -68,6 +66,10 @@ function App() {
         >
           Learn React
         </a>
+
+
+        <ul>{shoppingList()}</ul>        
+        
       </header>
     </div>
   );
@@ -75,9 +77,29 @@ function App() {
 
 }
 
+function handleClick1(){
+  alert('You clicked me!');
+}
 
+function shoppingList (){
+  const listItems = products.map(
+    product =>
+      <li
+        key = {product.type}
 
+        style=
+        {{
+          color: product.local ? 'red' : 'black'
+        }}
 
+        onClick = {handleClick1}
+
+      >
+        {product.title}
+      </li>
+  )
+  return listItems  
+}
 
 
 
